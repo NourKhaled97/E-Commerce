@@ -5,7 +5,11 @@ import { prisma } from "./prisma";
 import { Cart, Prisma } from "@prisma/client";
 
 export type CartWithProduct=Prisma.CartGetPayload<{
-    include:{items:{include:{product:true}}}
+    include: {items: {include: {product: true} } }
+}>
+
+export type CartItemWithProduct=Prisma.CardItemGetPayload<{
+    include: { product: true }
 }>
 
 export type ShoppingCart=CartWithProduct&{
